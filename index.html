@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>Minha Loja</li>
+            <li>Perfumaria</li>
+            <li>Maquiagem</li>
+            <li>Cabelos</li>
+            <li>Infantil</li>
+        </ul>
+        <button type="button" class="float">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </nav>
+    <div class="conteudo">
+        <h3>Ultimos pedidos</h3>
+        <div class="grid">
+
+        </div>
+    </div>
+</body>
+<script>
+
+    fetch('./product.json')
+        .then(response => {
+            return response.json()
+        })
+        .then(data => {
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+                let principal = document.createElement("DIV");
+                principal.setAttribute("class", "card");
+                principal.setAttribute("id", "principal");
+                document.querySelector(".grid").appendChild(principal);
+
+                let divTitle = document.createElement("DIV");
+                let textDiv1 = document.createTextNode(data[i].name);
+                divTitle.setAttribute("class", "conteudo");
+                divTitle.appendChild(textDiv1);
+                let divPreco = document.createElement("DIV");
+                let textDiv2 = document.createTextNode("R$ " + data[i].Value);
+                divPreco.setAttribute("class", "preco");
+                divPreco.appendChild(textDiv2);
+                let img = document.createElement("IMG");
+                img.setAttribute("class", "img-perfume");
+                img.setAttribute("src", data[i].images[0].imageUrl);
+
+                let divImg = principal.appendChild(img);
+                let divTitulo = principal.appendChild(divTitle);
+                let divValor = principal.appendChild(divPreco);
+
+            }
+        })
+        .catch(err => {
+
+        })
+
+    document.getElementById("principal").addEventListener("click", function card1() {
+        console.log("clickou aaaaa")
+    })
+
+</script>
+
+</html>

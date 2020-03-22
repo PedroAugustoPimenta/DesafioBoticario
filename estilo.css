@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css');
+
+* {
+    font-family: 'Roboto', sans-serif;
+ }
+html{
+    width: auto;
+    height: auto;      
+}
+nav{
+    display: flex;
+    padding: 10px 250px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+}
+
+ul li{
+    list-style: none;
+    display: inline;
+}
+
+
+nav ul li:nth-child(1) {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4e4e4e;
+    border-right: 1px solid #eee;
+ }
+
+ nav ul li {
+    padding: 10px;
+    display: inline;
+    font-size: 18px;
+    text-transform: uppercase;
+ }
+ 
+ .conteudo h3{
+     text-align: center;
+ }
+ .conteudo {
+    margin-left: 15%;
+    margin-right: 15%;
+    
+ }
+
+.conteudo .grid{
+    display: grid;
+    grid-gap: 5%;
+    grid-template-columns: auto auto auto;
+}
+
+img{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.card{
+    display: grid;
+    text-align: center;
+    border: 1px solid lightgray;
+    
+}
+
+button{
+    width: 10%;
+    background-color: #eeeeee;
+    font-size: 1.4em;
+    border: 1px solid lightslategray;
+    border-radius: 45%;
+    padding: 1% 1%;
+    color: lightslategrey;
+}
+
+button:hover{
+    background-color: white;
+}
+
+.card:hover{
+    border: 1px solid grey;
+    background-color: #eeeeee90;
+}
